@@ -33,9 +33,11 @@ use pocketmine\event\server\DataPacketSendEvent;
 use pocketmine\network\mcpe\protocol\LoginPacket;
 use pocketmine\network\mcpe\protocol\PlayerListPacket;
 use pocketmine\network\mcpe\protocol\PlayerSkinPacket;
+use pocketmine\network\mcpe\protocol\types\SkinData;
 use pocketmine\plugin\PluginBase;
 
 class SupportCharacterCreator extends PluginBase implements Listener{
+    /** @var SkinData[] */
     private $skinData = [];
 
     public function onEnable() : void{
