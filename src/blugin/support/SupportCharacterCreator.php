@@ -30,14 +30,9 @@ namespace blugin\support;
 use pocketmine\event\Listener;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\event\server\DataPacketSendEvent;
-use pocketmine\network\BadPacketException;
-use pocketmine\network\mcpe\JwtException;
-use pocketmine\network\mcpe\JwtUtils;
 use pocketmine\network\mcpe\protocol\LoginPacket;
 use pocketmine\network\mcpe\protocol\PlayerListPacket;
 use pocketmine\network\mcpe\protocol\PlayerSkinPacket;
-use pocketmine\network\mcpe\protocol\types\login\ClientData;
-use pocketmine\network\mcpe\protocol\types\login\ClientDataToSkinDataHelper;
 use pocketmine\plugin\PluginBase;
 
 class SupportCharacterCreator extends PluginBase implements Listener{
@@ -59,19 +54,10 @@ class SupportCharacterCreator extends PluginBase implements Listener{
 
         $packet = $event->getPacket();
         if($packet instanceof LoginPacket){
-            try{
-                [, $clientDataClaims,] = JwtUtils::parse($packet->clientDataJwt);
-            }catch(JwtException $e){
-                throw BadPacketException::wrap($e);
-            }
-            $mapper = new \JsonMapper;
-            $mapper->bEnforceMapType = false;
-            $mapper->bExceptionOnMissingData = true;
-            $mapper->bExceptionOnUndefinedProperty = true;
-            try{
-                $clientData = $mapper->map($clientDataClaims, new ClientData);
-            }catch(\JsonMapper_Exception $e){
-                throw BadPacketException::wrap($e);
+            $skinData = JwtParser::getSkinDataFromJwtString($packet->clientDataJwt);
+            $uuid = JwtParser::getUUIDFromJwtChain($packet->chainDataJwt);
+            if($skinData !== null && $uuid !== null){
+                $this->skinData[$player->getUniqueId()->toString()] = $skinData;
             }
 
             $this->skinData[$player->getUniqueId()->toString()] = ClientDataToSkinDataHelper::getInstance()->fromClientData($clientData);
