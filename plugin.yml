@@ -1,7 +1,7 @@
 ---
 name: SupportCharacterCreator
 main: blugin\support\SupportCharacterCreator
-version: 1.0.0
+version: 0.0.1
 api: [4.0.0]
 authors: ['Blugin-team', 'PresentKim']
 description: 'Support for skins created via character creators'
