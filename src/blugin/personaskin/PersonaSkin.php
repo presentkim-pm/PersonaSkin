@@ -33,7 +33,7 @@ use pocketmine\network\mcpe\convert\SkinAdapterSingleton;
 use pocketmine\network\mcpe\protocol\types\SkinData;
 use pocketmine\plugin\PluginBase;
 
-class SupportCharacterCreator extends PluginBase{
+class PersonaSkin extends PluginBase{
     public function onLoad(){
         SkinAdapterSingleton::set(new class extends LegacySkinAdapter{
             /** @var SkinData[] */

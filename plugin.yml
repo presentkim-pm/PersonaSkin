@@ -1,9 +1,9 @@
 ---
-name: SupportCharacterCreator
-main: blugin\support\SupportCharacterCreator
+name: PersonaSkin
+main: blugin\personaskin\PersonaSkin
 version: 0.0.1
 api: [4.0.0]
 authors: ['Blugin-team', 'PresentKim']
-description: 'Support for skins created via character creators'
+description: 'Support for persona skin (it created via character creators)'
 load: STARTUP
 ...
