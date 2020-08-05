@@ -28,8 +28,8 @@ declare(strict_types=1);
 namespace blugin\support;
 
 use pocketmine\entity\Skin;
-use pocketmine\network\mcpe\convert\LegacySkinAdapter;
-use pocketmine\network\mcpe\convert\SkinAdapterSingleton;
+use pocketmine\network\mcpe\protocol\types\LegacySkinAdapter;
+use pocketmine\network\mcpe\protocol\types\SkinAdapterSingleton;
 use pocketmine\network\mcpe\protocol\types\SkinData;
 use pocketmine\plugin\PluginBase;
 
