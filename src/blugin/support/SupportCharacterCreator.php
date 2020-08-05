@@ -30,10 +30,18 @@ namespace blugin\support;
 use pocketmine\event\Listener;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\event\server\DataPacketSendEvent;
+use pocketmine\network\BadPacketException;
+use pocketmine\network\mcpe\JwtException;
+use pocketmine\network\mcpe\JwtUtils;
+use pocketmine\network\mcpe\protocol\LoginPacket;
+use pocketmine\network\mcpe\protocol\PlayerListPacket;
+use pocketmine\network\mcpe\protocol\PlayerSkinPacket;
+use pocketmine\network\mcpe\protocol\types\login\ClientData;
+use pocketmine\network\mcpe\protocol\types\login\ClientDataToSkinDataHelper;
 use pocketmine\plugin\PluginBase;
 
 class SupportCharacterCreator extends PluginBase implements Listener{
-    private $datas = [];
+    private $skinData = [];
 
     public function onEnable() : void{
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -45,6 +53,31 @@ class SupportCharacterCreator extends PluginBase implements Listener{
      * @param DataPacketReceiveEvent $event
      */
     public function onDataPacketReceiveEvent(DataPacketReceiveEvent $event) : void{
+        $player = $event->getOrigin()->getPlayer();
+        if($player === null)
+            return;
+
+        $packet = $event->getPacket();
+        if($packet instanceof LoginPacket){
+            try{
+                [, $clientDataClaims,] = JwtUtils::parse($packet->clientDataJwt);
+            }catch(JwtException $e){
+                throw BadPacketException::wrap($e);
+            }
+            $mapper = new \JsonMapper;
+            $mapper->bEnforceMapType = false;
+            $mapper->bExceptionOnMissingData = true;
+            $mapper->bExceptionOnUndefinedProperty = true;
+            try{
+                $clientData = $mapper->map($clientDataClaims, new ClientData);
+            }catch(\JsonMapper_Exception $e){
+                throw BadPacketException::wrap($e);
+            }
+
+            $this->skinData[$player->getUniqueId()->toString()] = ClientDataToSkinDataHelper::getInstance()->fromClientData($clientData);
+        }elseif($packet instanceof PlayerSkinPacket){
+            $this->skinData[$player->getUniqueId()->toString()] = $packet->skin;
+        }
     }
 
     /**
@@ -53,5 +86,14 @@ class SupportCharacterCreator extends PluginBase implements Listener{
      * @param DataPacketSendEvent $event
      */
     public function onDataPacketSendEvent(DataPacketSendEvent $event) : void{
+        foreach($event->getPackets() as $packet){
+            if($packet instanceof PlayerListPacket){
+                foreach($packet->entries as $entry){
+                    $entry->skinData = $this->skinData[$entry->uuid->toString()] ?? $entry->skinData;
+                }
+            }elseif($packet instanceof PlayerSkinPacket){
+                $packet->skin = $this->skinData[$packet->uuid->toString()] ?? $packet->skin;
+            }
+        }
     }
 }
