@@ -48,21 +48,15 @@ class SupportCharacterCreator extends PluginBase implements Listener{
      * @param DataPacketReceiveEvent $event
      */
     public function onDataPacketReceiveEvent(DataPacketReceiveEvent $event) : void{
-        $player = $event->getOrigin()->getPlayer();
-        if($player === null)
-            return;
-
         $packet = $event->getPacket();
         if($packet instanceof LoginPacket){
             $skinData = JwtParser::getSkinDataFromJwtString($packet->clientDataJwt);
             $uuid = JwtParser::getUUIDFromJwtChain($packet->chainDataJwt);
             if($skinData !== null && $uuid !== null){
-                $this->skinData[$player->getUniqueId()->toString()] = $skinData;
+                $this->skinData[$uuid->toString()] = $skinData;
             }
-
-            $this->skinData[$player->getUniqueId()->toString()] = ClientDataToSkinDataHelper::getInstance()->fromClientData($clientData);
         }elseif($packet instanceof PlayerSkinPacket){
-            $this->skinData[$player->getUniqueId()->toString()] = $packet->skin;
+            $this->skinData[$event->getOrigin()->getPlayer()->getUniqueId()->toString()] = $packet->skin;
         }
     }
 
