@@ -56,9 +56,9 @@
   
 ## :space_invader: Demo  
 #### defore
- ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/asstes/demo/before.png)  
+ ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/assets/demo/before.png)  
 #### after  
- ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/asstes/demo/after.png)  
+ ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/assets/demo/after.png)  
   
 <br>  
   

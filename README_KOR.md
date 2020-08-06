@@ -56,9 +56,9 @@
   
 ## :space_invader: 데모  
 #### 적용 전
- ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/asstes/demo/before.png)  
+ ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/assets/demo/before.png)  
 #### 적용 후
- ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/asstes/demo/after.png)  
+ ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/assets/demo/after.png)  
   
 <br>  
   
