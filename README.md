@@ -22,11 +22,20 @@
   <a href="http://hits.dwyl.com/Blugin/PersonaSkin-PMMP">  
     <img src="http://hits.dwyl.com/Blugin/PersonaSkin-PMMP.svg">  
   </a>  
-  <br> ✔️ Support for persona skin (it created via character creators)
+  <br> ✔️ Correctly supports persona skin
   <br> ✔️ Doesn't cause additional lag on the server  
 </p>  
   
 <br>  
+<br>  
+  
+## :question: What is **persona skin**?  
+**persona skin** is a new format of skin created via [**charater creator**](https://minecraft.gamepedia.com/Character_creator)  
+It added in [Bedrock_Edition_1.13.0](https://minecraft.gamepedia.com/Bedrock_Edition_1.13.0) [(released on October 29, 2019)](https://feedback.minecraft.net/hc/en-us/articles/360035247792)  
+
+However, PMMP still does not support it, replaced this to simply skin filled with random colors  
+The way I implemented this is simply to return the skin sent by the player (Like any other Emote support plugin...)  
+  
 <br>  
   
 ## :file_folder: Target software:  

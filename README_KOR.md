@@ -29,6 +29,15 @@
 <br>  
 <br>  
   
+## :question: **개인 스킨** 이 무엇인가요?  
+**개인 스킨** 은 [**캐릭터 생성기**](https://minecraft.gamepedia.com/Character_creator) 로 만들어진 스킨의 새로운 스킨 포맷입니다  
+이 포맷은 [Bedrock_Edition_1.13.0](https://minecraft.gamepedia.com/Bedrock_Edition_1.13.0) 에서 추가되었습니다. [(2019년 10월 29일 릴리즈)](https://feedback.minecraft.net/hc/en-us/articles/360035247792)  
+하지만, PMMP는 여전히 이를 지원하지 않고 랜덤한 색상으로 채워진 스킨으로 대체했습니다  
+
+제가 이 기능을 구현한 방법은 단순히 플레이어가 보낸 스킨 데이터를 다시 보내주는 것입니다 (여타 Emote지원 플러그인들이 그렇듯이...)  
+  
+<br>  
+  
 ## :file_folder: 대상 소프트웨어: 
 **이 플러그인은 공식적으로 [Pocketmine-MP `API 3.x.x`](https://github.com/pmmp/PocketMine-MP/tree/stable) 에서만 작동합니다**
 > **만약 당신이 [**Pocketmine-MP** `API 4.x.x`](https://github.com/pmmp/PocketMine-MP/tree/master) 을 사용한다면,**  
