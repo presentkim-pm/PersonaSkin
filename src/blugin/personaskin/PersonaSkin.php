@@ -27,7 +27,7 @@ declare(strict_types=1);
 
 namespace blugin\personaskin;
 
-use pocketmine\network\mcpe\convert\SkinAdapterSingleton;
+use pocketmine\network\mcpe\protocol\types\SkinAdapterSingleton;
 use pocketmine\plugin\PluginBase;
 
 class PersonaSkin extends PluginBase{

@@ -28,7 +28,7 @@ declare(strict_types=1);
 namespace blugin\personaskin;
 
 use pocketmine\entity\Skin;
-use pocketmine\network\mcpe\convert\LegacySkinAdapter;
+use pocketmine\network\mcpe\protocol\types\LegacySkinAdapter;
 use pocketmine\network\mcpe\protocol\types\SkinData;
 
 class ParsonaSkinAdapter extends LegacySkinAdapter{
