@@ -1,7 +1,7 @@
-<p align="center"> <img src="https://i.ibb.co/ZxZvG2f/icon.png" width="360"> </p>
+<p align="center"> <img src="https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/icon.png" width="360"> </p>
 <br> <h1 align="center"> PersonaSkin :: support for persona skin </h1>
 <p align="right">  
-  <a href="https://github.com/Blugin/PersonaSkin-PMMP/blob/master/README_KOR.md">  
+  <a href="https://github.com/Blugin/PersonaSkin-PMMP/blob/stable/README_KOR.md">  
     <img src="https://img.shields.io/static/v1?label=%ED%95%9C%EA%B5%AD%EC%96%B4&message=%EB%A1%9C+%EC%9D%BD%EA%B8%B0&labelColor=success">  
   </a>  
 </p>  
@@ -55,8 +55,10 @@
 <br>   
   
 ## :space_invader: Demo  
- ![_](https://i.ibb.co/jVnZgNW/image.png)  
- ![_](https://i.ibb.co/prDDfm4/image.png)  
+#### defore
+ ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/asstes/demo/before.png)  
+#### after  
+ ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/asstes/demo/after.png)  
   
 <br>  
   

@@ -1,4 +1,4 @@
-<p align="center"> <img src="https://i.ibb.co/ZxZvG2f/icon.png" width="360"> </p>
+<p align="center"> <img src="https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/icon.png" width="360"> </p>
 <br> <h1 align="center"> PersonaSkin :: 개인 스킨을 지원시켜줍니다! </h1>
 <p align="right">  
   <a href="https://github.com/Blugin/PersonaSkin-PMMP/blob/stable/README.md">  
@@ -55,8 +55,10 @@
 <br>  
   
 ## :space_invader: 데모  
- ![_](https://i.ibb.co/jVnZgNW/image.png)  
- ![_](https://i.ibb.co/prDDfm4/image.png)  
+#### 적용 전
+ ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/asstes/demo/before.png)  
+#### 적용 후
+ ![_](https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/asstes/demo/after.png)  
   
 <br>  
   
