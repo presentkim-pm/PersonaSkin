@@ -31,7 +31,16 @@ use pocketmine\network\mcpe\convert\SkinAdapterSingleton;
 use pocketmine\plugin\PluginBase;
 
 class PersonaSkin extends PluginBase{
-    public function onLoad(){
+    private $originalAdaptor = null;
+
+    public function onEnable(){
+        $this->originalAdaptor = SkinAdapterSingleton::get();
         SkinAdapterSingleton::set(new ParsonaSkinAdapter);
+    }
+
+    public function onDisable(){
+        if($this->originalAdaptor !== null){
+            SkinAdapterSingleton::set($this->originalAdaptor);
+        }
     }
 }
