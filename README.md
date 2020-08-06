@@ -1,5 +1,5 @@
 <p align="center"> <img src="https://ghcdn.rawgit.org/Blugin/PersonaSkin-PMMP/stable/icon.png" width="360"> </p>
-<br> <h1 align="center"> PersonaSkin :: support for persona skin </h1>
+<br> <h1 align="center"> PersonaSkin :: support for user's persona skin! </h1>
 <p align="right">  
   <a href="https://github.com/Blugin/PersonaSkin-PMMP/blob/stable/README_KOR.md">  
     <img src="https://img.shields.io/static/v1?label=%ED%95%9C%EA%B5%AD%EC%96%B4&message=%EB%A1%9C+%EC%9D%BD%EA%B8%B0&labelColor=success">  
@@ -22,8 +22,8 @@
   <a href="http://hits.dwyl.com/Blugin/PersonaSkin-PMMP">  
     <img src="http://hits.dwyl.com/Blugin/PersonaSkin-PMMP.svg">  
   </a>  
-  <br> ✔️ Correctly supports persona skin
-  <br> ✔️ Doesn't cause additional lag on the server  
+  <br> ✔️ Makes show correctly skin created by the character creator!  
+  <br> ✔️ Now you don't have to see a skin filled with random colors!  
 </p>  
   
 <br>  
@@ -32,13 +32,11 @@
 ## :question: What is **persona skin**?  
 **persona skin** is a new format of skin created via [**charater creator**](https://minecraft.gamepedia.com/Character_creator)  
 It added in [Bedrock_Edition_1.13.0](https://minecraft.gamepedia.com/Bedrock_Edition_1.13.0) [(released on October 29, 2019)](https://feedback.minecraft.net/hc/en-us/articles/360035247792)  
-
-However, PMMP still does not support it, replaced this to simply skin filled with random colors  
-The way I implemented this is simply to return the skin sent by the player (Like any other Emote support plugin...)  
+- PMMP does not support this skin format, and makes it show as a skin filled with random colors  
   
 <br>  
   
-## :file_folder: Target software:  
+## :file_folder: Target software  
 **This plugin officially only works with [Pocketmine-MP `API 3.x.x`](https://github.com/pmmp/PocketMine-MP/tree/stable)**
 > **If you use [**Pocketmine-MP** `API 4.x.x`](https://github.com/pmmp/PocketMine-MP/tree/master),**  
 > **You should get the latest 0.0.1 version. (This version does not go up explicitly)**  
@@ -47,13 +45,13 @@ The way I implemented this is simply to return the skin sent by the player (Like
 <br>  
   
 ## :wrench: Installation
-1) [Download](#package-downloads) `.phar` from releases  
-2) Move dowloaded `.phar` file to your server's **/plugins/** folder  
-3) Restart the server (or execute `/reload` command)  
+1) Download `.phar` from releases  
+2) Move dowloaded `.phar` file to server's **/plugins/** folder  
+3) Restart the server or execute `/reload` command  
   
 <br>  
   
-## :package: Downloads:  
+## :package: Downloads  
   
 | Version | Phar Download | Updates Note |  
 | :-----: | :-----------: | :----------: |    
