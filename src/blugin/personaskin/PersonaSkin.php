@@ -25,7 +25,7 @@
 
 declare(strict_types=1);
 
-namespace blugin\support;
+namespace blugin\personaskin;
 
 use pocketmine\entity\Skin;
 use pocketmine\network\mcpe\convert\LegacySkinAdapter;
