@@ -2,20 +2,19 @@
 
 /*
  *
- *  ____  _             _         _____
- * | __ )| |_   _  __ _(_)_ __   |_   _|__  __ _ _ __ ___
- * |  _ \| | | | |/ _` | | '_ \    | |/ _ \/ _` | '_ ` _ \
- * | |_) | | |_| | (_| | | | | |   | |  __/ (_| | | | | | |
- * |____/|_|\__,_|\__, |_|_| |_|   |_|\___|\__,_|_| |_| |_|
- *                |___/
+ *  ____                           _   _  ___
+ * |  _ \ _ __ ___  ___  ___ _ __ | |_| |/ (_)_ __ ___
+ * | |_) | '__/ _ \/ __|/ _ \ '_ \| __| ' /| | '_ ` _ \
+ * |  __/| | |  __/\__ \  __/ | | | |_| . \| | | | | | |
+ * |_|   |_|  \___||___/\___|_| |_|\__|_|\_\_|_| |_| |_|
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * @author  Blugin team
- * @link    https://github.com/Blugin
+ * @author  PresentKim (debe3721@gmail.com)
+ * @link    https://github.com/PresentKim
  * @license https://www.gnu.org/licenses/lgpl-3.0 LGPL-3.0 License
  *
  *   (\ /)
@@ -25,7 +24,7 @@
 
 declare(strict_types=1);
 
-namespace blugin\personaskin;
+namespace kim\present\personaskin;
 
 use pocketmine\entity\Skin;
 use pocketmine\network\mcpe\protocol\types\LegacySkinAdapter;

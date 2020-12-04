@@ -1,7 +1,7 @@
---- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Blugin/PersonaSkin-PMMP
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/PresentKim/PersonaSkin-PMMP
 build-by-default: true
 branches:
-- stable
+- main
 projects:
   PersonaSkin:
     path: ""
