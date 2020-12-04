@@ -29,7 +29,7 @@ namespace kim\present\personaskin;
 use pocketmine\network\mcpe\protocol\types\SkinAdapterSingleton;
 use pocketmine\plugin\PluginBase;
 
-class PersonaSkin extends PluginBase{
+class Loader extends PluginBase{
     private $originalAdaptor = null;
 
     public function onEnable(){
