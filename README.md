@@ -30,7 +30,7 @@
 <br>  
   
 ## :question: What is a **persona skin**?  
-**Persona skin** is a new format of skin created via the [**charater creator**](https://minecraft.gamepedia.com/Character_creator)  
+**Persona skin** is a new format of skin created via the [**character creator**](https://minecraft.gamepedia.com/Character_creator)  
 It was added in [Bedrock_Edition_1.13.0](https://minecraft.gamepedia.com/Bedrock_Edition_1.13.0) [(released on October 29, 2019)](https://feedback.minecraft.net/hc/en-us/articles/360035247792)  
 - PMMP does not support this skin format, and makes it show as a skin filled with random colors.
   
