@@ -22,7 +22,7 @@
   <a href="http://hits.dwyl.com/PresentKim/PersonaSkin">  
     <img src="http://hits.dwyl.com/PresentKim/PersonaSkin.svg">  
   </a>  
-  <br> ✔️ Shows characters created with the Character Creator correctly!
+  <br> ✔️ Shows characters made with the Character Creator correctly!
   <br> ✔️ Now you don't have to see a skin filled with random colors!  
 </p>  
   
