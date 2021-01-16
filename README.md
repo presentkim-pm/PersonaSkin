@@ -22,17 +22,17 @@
   <a href="http://hits.dwyl.com/PresentKim/PersonaSkin">  
     <img src="http://hits.dwyl.com/PresentKim/PersonaSkin.svg">  
   </a>  
-  <br> ✔️ Makes show correctly skin created by the character creator!  
+  <br> ✔️ Shows characters made with the Character Creator correctly!
   <br> ✔️ Now you don't have to see a skin filled with random colors!  
 </p>  
   
 <br>  
 <br>  
   
-## :question: What is **persona skin**?  
-**persona skin** is a new format of skin created via [**charater creator**](https://minecraft.gamepedia.com/Character_creator)  
-It added in [Bedrock_Edition_1.13.0](https://minecraft.gamepedia.com/Bedrock_Edition_1.13.0) [(released on October 29, 2019)](https://feedback.minecraft.net/hc/en-us/articles/360035247792)  
-- PMMP does not support this skin format, and makes it show as a skin filled with random colors  
+## :question: What is a **persona skin**?  
+**Persona skin** is a new format of skin created via the [**character creator**](https://minecraft.gamepedia.com/Character_creator)  
+It was added in [Bedrock_Edition_1.13.0](https://minecraft.gamepedia.com/Bedrock_Edition_1.13.0) [(released on October 29, 2019)](https://feedback.minecraft.net/hc/en-us/articles/360035247792)  
+- PMMP does not support this skin format, and makes it show as a skin filled with random colors.
   
 <br>  
   
@@ -62,9 +62,9 @@ It added in [Bedrock_Edition_1.13.0](https://minecraft.gamepedia.com/Bedrock_Edi
 <br>   
   
 ## :space_invader: Demo  
-#### defore
+#### Before
  ![_](https://ghcdn.rawgit.org/PresentKim/PersonaSkin/stable/assets/demo/before.png)  
-#### after  
+#### After  
  ![_](https://ghcdn.rawgit.org/PresentKim/PersonaSkin/stable/assets/demo/after.png)  
   
 <br>  
