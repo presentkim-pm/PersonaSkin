@@ -63,9 +63,9 @@ It was added in [Bedrock_Edition_1.13.0](https://minecraft.gamepedia.com/Bedrock
   
 ## :space_invader: Demo  
 #### Before
- ![_](https://ghcdn.rawgit.org/PresentKim/PersonaSkin/stable/assets/demo/before.png)  
+ ![_](https://raw.githubusercontent.com/PresentKim/PersonaSkin/main/assets/demo/before.png)  
 #### After  
- ![_](https://ghcdn.rawgit.org/PresentKim/PersonaSkin/stable/assets/demo/after.png)  
+ ![_](https://raw.githubusercontent.com/PresentKim/PersonaSkin/main/assets/demo/after.png)  
   
 <br>  
   
