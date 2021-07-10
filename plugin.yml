@@ -2,8 +2,8 @@
 name: PersonaSkin
 main: kim\present\personaskin\Loader
 version: 1.1.1
-api: [ 3.0.0 ]
+api: [3.0.0]
 author: PresentKim
 description: Support for persona skin (it created via character creators)
-mcpe-protocol: [ 407, 408, 419, 422 ]
+mcpe-protocol: [407, 408, 419, 422, 440]
 ...
