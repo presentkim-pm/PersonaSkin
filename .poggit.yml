@@ -1,4 +1,4 @@
---- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/PresentKim/PersonaSkin-PMMP
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/presentkim-pm/PersonaSkin
 build-by-default: true
 branches:
   - main
@@ -6,6 +6,6 @@ projects:
   PersonaSkin:
     icon: "icon.png"
     libs:
-      - src: PresentKim/png-converter/png-converter
-        version: ^1.0.2
+      - src: presentkim-pm/png-converter/png-converter
+        version: ^1.1.0
 ...
