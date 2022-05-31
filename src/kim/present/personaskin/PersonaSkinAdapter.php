@@ -26,21 +26,27 @@ declare(strict_types=1);
 
 namespace kim\present\personaskin;
 
-use pocketmine\network\mcpe\convert\SkinAdapter;
-use pocketmine\network\mcpe\convert\SkinAdapterSingleton;
-use pocketmine\plugin\PluginBase;
+use pocketmine\entity\Skin;
+use pocketmine\network\mcpe\convert\LegacySkinAdapter;
+use pocketmine\network\mcpe\protocol\types\skin\SkinData;
 
-class Loader extends PluginBase{
-    private ?SkinAdapter $originalAdaptor = null;
+use function spl_object_id;
 
-    protected function onEnable() : void{
-        $this->originalAdaptor = SkinAdapterSingleton::get();
-        SkinAdapterSingleton::set(new ParsonaSkinAdapter());
+class PersonaSkinAdapter extends LegacySkinAdapter{
+    /** @var array<int, SkinData> */
+    private array $personaSkinData = [];
+
+    public function fromSkinData(SkinData $data) : Skin{
+        $skin = parent::fromSkinData($data);
+
+        if($data->isPersona()){
+            $this->personaSkinData[spl_object_id($skin)] = $data;
+        }
+        return $skin;
     }
 
-    protected function onDisable() : void{
-        if($this->originalAdaptor !== null){
-            SkinAdapterSingleton::set($this->originalAdaptor);
-        }
+    /** @throws \JsonException */
+    public function toSkinData(Skin $skin) : SkinData{
+        return $this->personaSkinData[spl_object_id($skin)] ?? parent::toSkinData($skin);
     }
 }
