@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  *
  *  ____                           _   _  ___
  * |  _ \ _ __ ___  ___  ___ _ __ | |_| |/ (_)_ __ ___
@@ -27,18 +27,26 @@ declare(strict_types=1);
 namespace kim\present\personaskin;
 
 use pocketmine\entity\Skin;
-use pocketmine\network\mcpe\protocol\types\LegacySkinAdapter;
-use pocketmine\network\mcpe\protocol\types\SkinData;
+use pocketmine\network\mcpe\convert\LegacySkinAdapter;
+use pocketmine\network\mcpe\protocol\types\skin\SkinData;
+
+use function spl_object_id;
 
 class ParsonaSkinAdapter extends LegacySkinAdapter{
+    /** @var array<int, SkinData> */
+    private array $personaSkinData = [];
+
     public function fromSkinData(SkinData $data) : Skin{
+        $skin = parent::fromSkinData($data);
+
         if($data->isPersona()){
-            return new PersoanSkin($data);
+            $this->personaSkinData[spl_object_id($skin)] = $data;
         }
-        return parent::fromSkinData($data);
+        return $skin;
     }
 
+    /** @throws \JsonException */
     public function toSkinData(Skin $skin) : SkinData{
-        return $skin instanceof PersoanSkin ? $skin->getPersonaSkinData() : parent::toSkinData($skin);
+        return $this->personaSkinData[spl_object_id($skin)] ?? parent::toSkinData($skin);
     }
 }

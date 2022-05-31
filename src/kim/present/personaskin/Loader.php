@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  *
  *  ____                           _   _  ___
  * |  _ \ _ __ ___  ___  ___ _ __ | |_| |/ (_)_ __ ___
@@ -26,18 +26,19 @@ declare(strict_types=1);
 
 namespace kim\present\personaskin;
 
-use pocketmine\network\mcpe\protocol\types\SkinAdapterSingleton;
+use pocketmine\network\mcpe\convert\SkinAdapter;
+use pocketmine\network\mcpe\convert\SkinAdapterSingleton;
 use pocketmine\plugin\PluginBase;
 
 class Loader extends PluginBase{
-    private $originalAdaptor = null;
+    private ?SkinAdapter $originalAdaptor = null;
 
-    public function onEnable(){
+    protected function onEnable() : void{
         $this->originalAdaptor = SkinAdapterSingleton::get();
-        SkinAdapterSingleton::set(new ParsonaSkinAdapter);
+        SkinAdapterSingleton::set(new ParsonaSkinAdapter());
     }
 
-    public function onDisable(){
+    protected function onDisable() : void{
         if($this->originalAdaptor !== null){
             SkinAdapterSingleton::set($this->originalAdaptor);
         }
