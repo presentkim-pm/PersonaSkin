@@ -4,7 +4,7 @@ branches:
   - main
 projects:
   PersonaSkin:
-    icon: "icon.png"
+    icon: "assets/icon.png"
     libs:
       - src: presentkim-pm/png-converter/png-converter
         version: ^1.1.0
