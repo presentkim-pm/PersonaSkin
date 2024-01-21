@@ -2,7 +2,7 @@
 name: PersonaSkin
 main: kim\present\personaskin\Main
 version: 1.2.0
-api: [ 4.0.0 ]
+api: [ 5.0.0 ]
 author: PresentKim
 description: Support for persona skin (it created via character creators)
 ...

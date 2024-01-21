@@ -28,7 +28,7 @@ namespace kim\present\personaskin;
 
 use kim\present\traits\removeplugindatadir\RemovePluginDataDirTrait;
 use pocketmine\network\mcpe\convert\SkinAdapter;
-use pocketmine\network\mcpe\convert\SkinAdapterSingleton;
+use pocketmine\network\mcpe\convert\TypeConverter;
 use pocketmine\plugin\PluginBase;
 
 class Main extends PluginBase{
@@ -37,13 +37,15 @@ class Main extends PluginBase{
     private ?SkinAdapter $originalAdaptor = null;
 
     protected function onEnable() : void{
-        $this->originalAdaptor = SkinAdapterSingleton::get();
-        SkinAdapterSingleton::set(new PersonaSkinAdapter());
+        $typeConverter = TypeConverter::getInstance();
+
+        $this->originalAdaptor = $typeConverter->getSkinAdapter();
+        $typeConverter->setSkinAdapter(new PersonaSkinAdapter());
     }
 
     protected function onDisable() : void{
         if($this->originalAdaptor !== null){
-            SkinAdapterSingleton::set($this->originalAdaptor);
+            TypeConverter::getInstance()->setSkinAdapter($this->originalAdaptor);
         }
     }
 }
