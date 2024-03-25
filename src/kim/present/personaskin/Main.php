@@ -26,13 +26,11 @@ declare(strict_types=1);
 
 namespace kim\present\personaskin;
 
-use kim\present\traits\removeplugindatadir\RemovePluginDataDirTrait;
 use pocketmine\network\mcpe\convert\SkinAdapter;
 use pocketmine\network\mcpe\convert\TypeConverter;
 use pocketmine\plugin\PluginBase;
 
 class Main extends PluginBase{
-    use RemovePluginDataDirTrait;
 
     private ?SkinAdapter $originalAdaptor = null;
 

@@ -5,9 +5,4 @@ branches:
 projects:
   PersonaSkin:
     icon: "assets/icon.png"
-    libs:
-      - src: presentkim-pm/png-converter/png-converter
-        version: ^1.1.0
-      - src: presentkim-pm/remove-plugin-data-dir-trait/remove-plugin-data-dir-trait
-        version: ^1.0.0
 ...
