@@ -32,6 +32,7 @@ use pocketmine\network\mcpe\convert\LegacySkinAdapter;
 use pocketmine\network\mcpe\protocol\types\skin\SkinData;
 
 class PersonaSkinAdapter extends LegacySkinAdapter{
+
     /**
      * @var SkinData[]
      * @phpstan-var array<int, SkinData>
