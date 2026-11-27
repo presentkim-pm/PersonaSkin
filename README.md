@@ -37,41 +37,31 @@
 It was added
 in [Bedrock_Edition_1.13.0](https://minecraft.gamepedia.com/Bedrock_Edition_1.13.0) [(released on October 29, 2019)](https://feedback.minecraft.net/hc/en-us/articles/360035247792)
 
-- PMMP does not support this skin format, and makes it show as a skin filled with random colors.
+- Vanilla PocketMine-MP does not support this skin format, and makes it show as a skin filled with random colors.
 
 ##
 
 -----
 
-## Target software:
+## Installation & Requirements
 
-This plugin officially only works with [`Pocketmine-MP`](https://github.com/pmmp/PocketMine-MP/).
-
-##
-
------
-
-## Downloads
-
-### Download from [Github Releases][releases-url]
-
-[![Github Downloads][release-badge]][releases-url]
-
-###
-
-### Download from [Poggit Releases][poggit-release-url]
-
-[![Poggit Downloads][poggit-downloads-badge]][poggit-release-url]
-
-##
-
------
-
-## Installation
-
-1) Download plugin `.phar` releases
-2) Move downloaded `.phar` file to server's **/plugins/** folder
-3) Restart the server
+- **Server**
+  - [axolotl-pm/PocketMine-MP](https://github.com/axolotl-pm/PocketMine-MP) `5.51` or higher (`plugin.yml` `api: [5.51.0]`),
+    which uses BedrockProtocol 64 (Bedrock `1.26.60`).
+  - PHP `8.4` or higher.
+- **Installation**
+  1) Download `PersonaSkin.phar` from [GitHub Releases][releases-url]
+  2) Move the downloaded `.phar` file to the server's **/plugins/** folder
+  3) Restart the server
+- **Old versions**
+  - The version for the original [pmmp/PocketMine-MP](https://github.com/pmmp/PocketMine-MP) `5.x` is kept on
+    the [`legacy/pmmp-5.44`](https://github.com/presentkim-pm/PersonaSkin/tree/legacy/pmmp-5.44) branch.
+- **Development**
+  - `composer install` then `composer test` runs the PHPUnit tests.
+- **How it works**
+  - On enable the plugin replaces the server's `SkinAdapter` with `PersonaSkinAdapter`, which remembers the original
+    `SkinData` of persona skins and sends it to other players, instead of the random-colored placeholder skin.
+    On disable the original adapter is restored.
 
 ##
 
@@ -87,12 +77,6 @@ Distributed under the **LGPL 3.0**. See [LICENSE][license-url] for more informat
 
 [author-discord]: https://discordapp.com/users/345772340279508993
 
-[poggit-ci-badge]: https://poggit.pmmp.io/ci.shield/presentkim-pm/PersonaSkin/PersonaSkin?style=for-the-badge
-
-[poggit-version-badge]: https://poggit.pmmp.io/shield.api/PersonaSkin?style=for-the-badge
-
-[poggit-downloads-badge]: https://poggit.pmmp.io/shield.dl.total/PersonaSkin?style=for-the-badge
-
 [version-badge]: https://img.shields.io/github/v/release/presentkim-pm/PersonaSkin?display_name=tag&style=for-the-badge&label=VERSION
 
 [release-badge]: https://img.shields.io/github/downloads/presentkim-pm/PersonaSkin/total?style=for-the-badge&label=GITHUB%20
@@ -100,10 +84,6 @@ Distributed under the **LGPL 3.0**. See [LICENSE][license-url] for more informat
 [stars-badge]: https://img.shields.io/github/stars/presentkim-pm/PersonaSkin.svg?style=for-the-badge
 
 [license-badge]: https://img.shields.io/github/license/presentkim-pm/PersonaSkin.svg?style=for-the-badge
-
-[poggit-ci-url]: https://poggit.pmmp.io/ci/presentkim-pm/PersonaSkin/PersonaSkin
-
-[poggit-release-url]: https://poggit.pmmp.io/p/PersonaSkin
 
 [stars-url]: https://github.com/presentkim-pm/PersonaSkin/stargazers
 
