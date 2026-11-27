@@ -1,0 +1,14 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    uses: presentkim-pm/plugin-template/.github/workflows/build-plugin.yml@main
+    with:
+      release: true

@@ -1,8 +1,9 @@
 ---
 name: PersonaSkin
 main: kim\present\personaskin\Main
-version: 1.3.2
-api: [ 5.0.0 ]
+src-namespace-prefix: kim\present\personaskin
+version: 2.0.0
+api: [ 5.51.0 ]
 author: PresentKim
 description: Support for persona skin (it created via character creators)
 ...

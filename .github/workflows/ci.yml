@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up PHP 8.4
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          extensions: phar, tokenizer, zlib
+          ini-values: phar.readonly=0
+          coverage: none
+          tools: composer:v2
+
+      - name: Install dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist --ignore-platform-req='ext-*'
+
+      - name: Run tests
+        run: |
+          if [ -f phpunit.xml.dist ] || [ -f phpunit.xml ]; then
+            vendor/bin/phpunit
+          else
+            echo "No phpunit.xml.dist, skipping tests"
+          fi
+
+      # Only for presentkim-pm/plugin-template itself: the builder is tested end-to-end on generated fixtures
+      - name: Test the plugin builder
+        if: ${{ github.repository == 'presentkim-pm/plugin-template' }}
+        run: php tests/builder/run.php
+
+  # make sure the phar builds (libraries bundled and shaded), without releasing
+  build:
+    uses: presentkim-pm/plugin-template/.github/workflows/build-plugin.yml@main
+    with:
+      release: false

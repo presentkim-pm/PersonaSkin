@@ -33,6 +33,7 @@ use pocketmine\plugin\PluginBase;
 class Main extends PluginBase{
 
     private ?SkinAdapter $originalAdaptor = null;
+    private ?PersonaSkinAdapter $adapter = null;
 
     protected function onEnable() : void{
         /**
@@ -47,12 +48,16 @@ class Main extends PluginBase{
         $typeConverter = TypeConverter::getInstance();
 
         $this->originalAdaptor = $typeConverter->getSkinAdapter();
-        $typeConverter->setSkinAdapter(new PersonaSkinAdapter());
+        $this->adapter = new PersonaSkinAdapter();
+        $typeConverter->setSkinAdapter($this->adapter);
     }
 
     protected function onDisable() : void{
-        if($this->originalAdaptor !== null){
-            TypeConverter::getInstance()->setSkinAdapter($this->originalAdaptor);
+        $typeConverter = TypeConverter::getInstance();
+        //Do not overwrite the adapter if another plugin has replaced ours in the meantime
+        if($this->originalAdaptor !== null && $typeConverter->getSkinAdapter() === $this->adapter){
+            $typeConverter->setSkinAdapter($this->originalAdaptor);
         }
+        $this->originalAdaptor = $this->adapter = null;
     }
 }

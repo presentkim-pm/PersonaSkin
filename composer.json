@@ -1,0 +1,29 @@
+{
+  "name": "presentkim/personaskin",
+  "description": "Support for persona skin (created via character creators) for axolotl-pm/PocketMine-MP",
+  "type": "project",
+  "license": "LGPL-3.0-or-later",
+  "require": {
+    "php": "^8.4"
+  },
+  "require-dev": {
+    "axolotl-pm/pocketmine-mp": "^5.51",
+    "phpunit/phpunit": "^12.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "kim\\present\\personaskin\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "kim\\present\\personaskin\\tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

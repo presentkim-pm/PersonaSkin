@@ -1,3 +1,6 @@
-### Intellij ###
+/vendor/
+.phpunit.result.cache
+/.phpunit.cache/
+/.releases/
 .idea
 *.iml

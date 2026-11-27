@@ -30,26 +30,33 @@ use JsonException;
 use pocketmine\entity\Skin;
 use pocketmine\network\mcpe\convert\LegacySkinAdapter;
 use pocketmine\network\mcpe\protocol\types\skin\SkinData;
+use WeakMap;
 
 class PersonaSkinAdapter extends LegacySkinAdapter{
 
     /**
-     * @var SkinData[]
-     * @phpstan-var array<int, SkinData>
+     * The original skin data of persona skins, keyed by the (placeholder) Skin created from it.
+     * It is weak, so the data is released together with the Skin when the player leaves or changes skin.
+     *
+     * @var WeakMap<Skin, SkinData>
      */
-    private array $personaSkinData = [];
+    private WeakMap $personaSkinData;
+
+    public function __construct(){
+        $this->personaSkinData = new WeakMap();
+    }
 
     public function fromSkinData(SkinData $data) : Skin{
         $skin = parent::fromSkinData($data);
 
         if($data->isPersona()){
-            $this->personaSkinData[spl_object_id($skin)] = $data;
+            $this->personaSkinData[$skin] = $data;
         }
         return $skin;
     }
 
     /** @throws JsonException */
     public function toSkinData(Skin $skin) : SkinData{
-        return $this->personaSkinData[spl_object_id($skin)] ?? parent::toSkinData($skin);
+        return $this->personaSkinData[$skin] ?? parent::toSkinData($skin);
     }
 }
